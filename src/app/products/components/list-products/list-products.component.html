@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p class="h3">Products List</p>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit nisi assumenda ex quod, sit, ea mollitia blanditiis ducimus dolor quidem cumque quis veniam consequatur commodi? Dicta sunt laudantium aspernatur officiis.</p>
+        </div>
+    </div>
+<div class="row">
+    <div *ngFor="let product of products" class="col-md-3" >
+        <div class="card" >
+            <div class="card-header text-white text-center ">
+            <img [src]="product.img" alt='' height="50" weight='50'>
+            </div>
+            <div class="card-body">
+              <ul class="list-group">
+                  <li class="list-group-item">
+                      {{product.name}}
+                     </li>
+                     <li class="list-group-item">
+                        {{product.price}}
+                        
+                     </li>
+                     <li class="list-group-item">
+                        {{product.qty}}
+                     </li>
+
+              </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</div>

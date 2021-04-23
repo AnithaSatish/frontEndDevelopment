@@ -1,0 +1,68 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p class="h3">Create Product</p>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit nisi assumenda ex quod, sit, ea mollitia blanditiis ducimus dolor quidem cumque quis veniam consequatur commodi? Dicta sunt laudantium aspernatur officiis.</p>
+        </div>
+    </div>
+    <pre>{{product|json}}</pre>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card" style="background-color: silver;">
+                <div class="card-header bg-success text-center text-white">
+                <p class="lead">Create Product</p>
+                </div>
+                <div class="card-body">
+                    <form (submit)='submitCreateProduct()'>
+                        <div class="form-group">
+                            <input
+                            name='productname'
+                            [(ngModel)]='product.name'
+                            type="text" class="form-control" placeholder="Name">
+                          
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-file">
+                            <label class="custom-file-label" for="customFile">Choose Image</label>
+                         <input
+                         name='img'
+                         (change)="selectProductImage($event)"
+                         type="file" class="custom-file-input " id="customFile" />
+                         <div *ngIF='imageFileName'>
+                          <small>{{imageFileName.name}}</small>
+                         </div>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                            <input 
+                            name='price'
+                            [(ngModel)]='product.price'
+                            
+                            type="number" class="form-control" placeholder="Price">
+
+                        </div>
+                        <div class="form-group">
+                            <input 
+                            name='qty'
+                            [(ngModel)]='product.qty'
+                            type="number" class="form-control" placeholder="Qty">
+
+                        </div>
+                        <div class="form-group">
+                            <textarea 
+                            name='productInfo'
+                            [(ngModel)]='product.info'
+                            rows="4" class="form-control"></textarea>
+
+                        </div>
+                        <div>
+                            <input type="submit" class="btn btn-success btn-sm" value="Submit">
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
